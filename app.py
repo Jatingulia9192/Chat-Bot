@@ -44,7 +44,6 @@ if prompt:
 
     # 4. Send request to Together.ai
     response = requests.post(url, headers=headers, json=data)
-    st.write(response_json)
     response_json = response.json()
 
     # 5. Get assistant’s reply
