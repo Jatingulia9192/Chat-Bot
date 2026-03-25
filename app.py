@@ -47,7 +47,14 @@ if prompt:
     response_json = response.json()
 
     # 5. Get assistant’s reply
+    # Debug: show full response (temporary)
+    st.write(response_json)
+
+    # Safe extraction
+    if 'choices' in response_json and len(response_json['choices']) > 0:
     reply = response_json['choices'][0]['message']['content']
+    else:
+    reply = "⚠️ API Error: " + str(response_json)
 
     # 6. Show assistant’s reply in chat
     st.chat_message("assistant").markdown(reply)
