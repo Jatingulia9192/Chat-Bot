@@ -36,7 +36,7 @@ if prompt:
         "Content-Type": "application/json"
     }
     data = {
-        "model": "meta-llama/Llama-3-8b-chat-hf",
+        "model": "mistralai/Mixtral-8x7B-Instruct-v0.1",,
         "messages": st.session_state.messages,
         "max_tokens": 100,
         "temperature": 0.7
