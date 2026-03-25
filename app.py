@@ -47,12 +47,11 @@ if prompt:
     response_json = response.json()
 
     # 5. Get assistant’s reply
-    # Debug: show full response (temporary)
+    # 5. Get assistant’s reply (FIXED)
     st.write(response_json)
 
-    # Safe extraction
     if 'choices' in response_json and len(response_json['choices']) > 0:
-    reply = response_json['choices'][0]['message']['content']
+       reply = response_json['choices'][0]['message']['content']
     else:
     reply = "⚠️ API Error: " + str(response_json)
 
